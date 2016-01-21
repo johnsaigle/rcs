@@ -6,8 +6,8 @@ set background=dark
 " let g:solarized_visibility = "high"
 " let g:solarized_contrast = "high"
 " colorscheme solarized
+colorscheme solarized
 filetype plugin indent on
-:colorscheme solarized
 :set number
 :set expandtab
 :set tabstop=4
