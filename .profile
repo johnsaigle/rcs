@@ -106,7 +106,7 @@ if [[ $platform == 'linux-gnu' ]]; then
     alias ls='ls -lath --classify --color=auto'
     alias work='cs /var/www/loris'
 elif [[ $platform == 'osx' ]]; then
-    alias ls='ls -latFGh'
+    alias ls='ls -ltFGh'
     alias work='ssh lorisadmin@132.206.37.47'
     alias down='cs ~/Downloads'
     alias hack='cs ~/Documents/workspace'
