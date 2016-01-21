@@ -2,7 +2,7 @@
 # Detect platform
 platform='unknown'
 if [[ "$OSTYPE" == 'linux-gnu' ]]; then
-    platform='linux'
+    platform='linux-gnu'
 elif [[ "$OSTYPE" == 'darwin'* ]]; then
     platform='osx'
 fi
@@ -10,9 +10,9 @@ fi
 #===========================#
 # Fun colors for ls
 # using 'Solarized' theme
-if [[ platform == 'linux-gnu' ]]; then
-    eval `dircolors ~/Other/dircolors-solarized/dircolors.ansi-dark`
-elif [[ platform == 'osx' ]]; then
+if [[ $platform == 'linux-gnu' ]]; then
+    eval `dircolors ~/Other/dircolors-solarized/dircolors.ansi-universal`
+elif [[ $platform == 'osx' ]]; then
     export LS_COLORS=gxfxbEaEBxxEhEhBaDaCaD
 fi
 
@@ -102,11 +102,11 @@ PS4='+ '
 # for right now, linux
 # means work vm and osx
 # is my personal pc
-if [[ platform == 'linux-gnu' ]]; then
-    alias ls='ls -lh --classify --color=auto'
+if [[ $platform == 'linux-gnu' ]]; then
+    alias ls='ls -lath --classify --color=auto'
     alias work='cs /var/www/loris'
-elif [[ platform == 'osx' ]]; then
-    alias ls='ls -lFGh'
+elif [[ $platform == 'osx' ]]; then
+    alias ls='ls -latFGh'
     alias work='ssh lorisadmin@132.206.37.47'
     alias down='cs ~/Downloads'
     alias hack='cs ~/Documents/workspace'
