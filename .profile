@@ -105,6 +105,7 @@ PS4='+ '
 if [[ $platform == 'linux-gnu' ]]; then
     alias ls='ls -lath --classify --color=auto'
     alias work='cs /var/www/loris'
+    ls
 elif [[ $platform == 'osx' ]]; then
     alias ls='ls -latFGh'
     alias work='ssh lorisadmin@132.206.37.47'
