@@ -14,8 +14,12 @@ set nocompatible
 :set expandtab
 :set tabstop=4
 :set shiftwidth=4
-:set autoindent
+:set cindent
 :set smartindent
+:set autoindent
 :nnoremap <C-h> gT
 :nnoremap <C-l> gt
 :au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
+:set hlsearch
+:set incsearch
+

@@ -105,9 +105,11 @@ PS4='+ '
 if [[ $platform == 'linux-gnu' ]]; then
     alias ls='ls -lath --classify --color=auto'
     alias work='cs /var/www/loris'
+    ls
 elif [[ $platform == 'osx' ]]; then
-    alias ls='ls -ltFGh'
-    alias work='ssh lorisadmin@132.206.37.47'
+    alias ls='ls -latFGh'
+    alias sandbox='ssh lorisadmin@132.206.37.47'
+    alias biobank='ssh jsaigle@login.bic.mni.mcgill.ca'
     alias down='cs ~/Downloads'
     alias hack='cs ~/Documents/workspace'
     alias ip='ipconfig getifaddr en0'
