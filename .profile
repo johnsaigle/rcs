@@ -108,7 +108,8 @@ if [[ $platform == 'linux-gnu' ]]; then
     ls
 elif [[ $platform == 'osx' ]]; then
     alias ls='ls -latFGh'
-    alias work='ssh lorisadmin@132.206.37.47'
+    alias sandbox='ssh lorisadmin@132.206.37.47'
+    alias biobank='ssh jsaigle@login.bic.mni.mcgill.ca'
     alias down='cs ~/Downloads'
     alias hack='cs ~/Documents/workspace'
     alias ip='ipconfig getifaddr en0'

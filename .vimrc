@@ -12,8 +12,11 @@ filetype plugin indent on
 :set expandtab
 :set tabstop=4
 :set shiftwidth=4
-:set autoindent
+:set cindent
 :set smartindent
+:set autoindent
 :nnoremap <C-h> gT
 :nnoremap <C-l> gt
+:set hlsearch
+:set incsearch
 
