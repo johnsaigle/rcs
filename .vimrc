@@ -1,9 +1,7 @@
-execute pathogen#infect()
 set term=xterm-256color
 filetype plugin indent on
 :syntax on
 :syntax enable
-colorscheme hybrid
 set background=dark
 set nocompatible
 " solarized options 
