@@ -1,4 +1,4 @@
-#===========================#
+
 # Detect platform
 platform='unknown'
 if [[ "$OSTYPE" == 'linux-gnu' ]]; then
@@ -107,12 +107,17 @@ if [[ $platform == 'linux-gnu' ]]; then
     alias work='cs /var/www/loris'
     ls
 elif [[ $platform == 'osx' ]]; then
-    alias ls='ls -latFGh'
+    alias ls='ls -FG'
     alias sandbox='ssh lorisadmin@132.206.37.47'
+    alias qpn='ssh jsaigle@132.206.37.100'
     alias biobank='ssh jsaigle@login.bic.mni.mcgill.ca'
     alias down='cs ~/Downloads'
     alias hack='cs ~/Documents/workspace'
     alias ip='ipconfig getifaddr en0'
+    # Setting PATH for Python 3.5
+    # The orginal version is saved in .profile.pysave
+    PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+    export PATH
 fi
 
 # platform-independent
@@ -120,8 +125,3 @@ fi
 # for easy concatenation
 alias epro='vim ~/.profile'
 alias rfp='source ~/.profile'
-
-# Setting PATH for Python 3.5
-# The orginal version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-export PATH
