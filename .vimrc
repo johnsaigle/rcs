@@ -10,7 +10,6 @@ set nocompatible
 " let g:solarized_visibility = "high"
 " let g:solarized_contrast = "high"
 " colorscheme solarized
-:set number
 :set expandtab
 :set tabstop=4
 :set shiftwidth=4
@@ -22,4 +21,12 @@ set nocompatible
 :au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
 :set hlsearch
 :set incsearch
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
 
+nnoremap <C-n> :call NumberToggle()<cr>
