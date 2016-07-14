@@ -103,7 +103,7 @@ PS4='+ '
 # means work vm and osx
 # is my personal pc
 if [[ $platform == 'linux-gnu' ]]; then
-    alias ls='ls -lath --classify --color=auto'
+    alias ls='ls -th --classify --color=auto'
     alias work='cs /var/www/loris'
     ls
 elif [[ $platform == 'osx' ]]; then
