@@ -17,14 +17,6 @@ elif [[ $platform == 'osx' ]]; then
 fi
 
 #===========================#
-# Functions
-
-# combine ls and cd
-cs () {
-    cd "$1" && ls
-}
-
-#===========================#
 # Prompt
 
 # stolen from someone else
@@ -99,29 +91,12 @@ PS4='+ '
 #===========================#
 # Aliases
 
-# for right now, linux
-# means work vm and osx
-# is my personal pc
-if [[ $platform == 'linux-gnu' ]]; then
-    alias ls='ls -lath --classify --color=auto'
-    alias work='cs /var/www/loris'
-    ls
-elif [[ $platform == 'osx' ]]; then
-    alias ls='ls -FG'
-    alias sandbox='ssh lorisadmin@132.206.37.47'
-    alias qpn='ssh jsaigle@132.206.37.100'
-    alias biobank='ssh jsaigle@login.bic.mni.mcgill.ca'
-    alias down='cs ~/Downloads'
-    alias hack='cs ~/Documents/workspace'
-    alias ip='ipconfig getifaddr en0'
-    # Setting PATH for Python 3.5
-    # The orginal version is saved in .profile.pysave
-    PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-    export PATH
-fi
-
 # platform-independent
 # keep these at the bottom 
 # for easy concatenation
 alias epro='vim ~/.profile'
 alias rfp='source ~/.profile'
+alias ls='ls --color=auto'
+alias work='cd /var/www/loris/'
+alias tlog='sudo tail -f /var/log/apache2/loris-error.log | ccze -A'
+alias talog='sudo tail -f /var/log/apache2/loris-access.log | ccze -A'

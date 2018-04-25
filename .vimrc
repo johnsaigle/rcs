@@ -6,12 +6,17 @@ endif
 call plug#begin()
 Plug 'StanAngeloff/php.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/seoul256.vim'
 call plug#end()
 :syntax on
 :syntax enable
-let g:solarized_termcolors=256
-colorscheme solarized
-set background=dark
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+let g:seoul256_srgb = 1
+let g:seoul256_background = 233
+colo seoul256
 set nocompatible
 :set number
 :set expandtab
@@ -22,7 +27,6 @@ set nocompatible
 :set autoindent
 :nnoremap <C-h> gT
 :nnoremap <C-l> gt
-:au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
 :set hlsearch
 :set incsearch
 
