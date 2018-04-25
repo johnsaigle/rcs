@@ -6,8 +6,8 @@ endif
 call plug#begin()
 Plug 'StanAngeloff/php.vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 call plug#end()
 :syntax on
 :syntax enable
