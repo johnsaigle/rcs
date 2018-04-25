@@ -1,13 +1,18 @@
-set term=xterm-256color
-filetype plugin indent on
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
+Plug 'StanAngeloff/php.vim'
+Plug 'altercation/vim-colors-solarized'
+call plug#end()
 :syntax on
 :syntax enable
+let g:solarized_termcolors=256
+colorscheme solarized
 set background=dark
 set nocompatible
-" solarized options 
-" let g:solarized_visibility = "high"
-" let g:solarized_contrast = "high"
-" colorscheme solarized
 :set number
 :set expandtab
 :set tabstop=4
