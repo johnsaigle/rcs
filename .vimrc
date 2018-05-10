@@ -29,4 +29,6 @@ set nocompatible
 :nnoremap <C-l> gt
 :set hlsearch
 :set incsearch
-
+:set colorcolumn=80
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
