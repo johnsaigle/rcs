@@ -9,6 +9,10 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 call plug#end()
+:set encoding=utf-8
+"show whitespace
+:set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+:set list
 :syntax on
 :syntax enable
 "set background=dark
