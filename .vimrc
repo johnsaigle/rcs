@@ -7,7 +7,20 @@ endif
 
 call plug#begin()
 " Vim things
+Plug 'w0rp/ale'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'dense-analysis/ale'
+
+" Prettier for formatting
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" Nerdtree file browser
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Fuzzy file search a la VSCode
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Colours
 Plug 'altercation/vim-colors-solarized'
@@ -27,15 +40,9 @@ Plug 'StanAngeloff/php.vim'
 Plug 'gregsexton/matchtag' " Like matchparen, but for HTML tags
 
 "JavaScript stuff
-Plug 'moll/vim-node'
-Plug 'w0rp/ale' " ALE, better than Syntastic
-Plug 'https://github.com/isRuslan/vim-es6.git'
-Plug 'nikvdp/ejs-syntax'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'tpope/vim-jdaddy' "Json text objects
-Plug 'tweekmonster/braceless.vim' " text objects and more for Python and other indented code
+Plug 'maxmellon/vim-jsx-pretty'
+
 
 let g:jsx_ext_required = 0
 call plug#end()
@@ -69,4 +76,14 @@ match OverLength /\%81v.\+/
 
 " Auto format js files
 autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
+" Open NerdTree right away
+autocmd VimEnter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
+
+let g:ale_fix_on_save = 1
+let g:ale_linters_explicit = 1
