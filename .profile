@@ -1,4 +1,3 @@
-
 # Detect platform
 platform='unknown'
 if [[ "$OSTYPE" == 'linux-gnu' ]]; then
@@ -13,7 +12,8 @@ fi
 if [[ $platform == 'linux-gnu' ]]; then
     eval `dircolors ~/Other/dircolors-solarized/dircolors.ansi-universal`
 elif [[ $platform == 'osx' ]]; then
-    export LS_COLORS=gxfxbEaEBxxEhEhBaDaCaD
+    export LSCOLORS=exfxfeaeBxxehehbadacea
+    alias ls='ls -lGH'
 fi
 
 #===========================#
@@ -96,14 +96,3 @@ PS4='+ '
 # for easy concatenation
 alias epro='vim ~/.profile'
 alias rfp='source ~/.profile'
-alias ls='ls --color=auto'
-alias work='cd /var/www/loris/'
-alias tlog='sudo tail -f /var/log/apache2/loris-error.log | ccze -A'
-alias talog='sudo tail -f /var/log/apache2/loris-access.log | ccze -A'
-# Extract a list of all changed PHP files in a commit
-alias cs='vendor/bin/phpcs --standard=docs/LorisCS.xml $(git status -s | grep " M " | cut -d " " -f 3)'
-alias cbf='vendor/bin/phpcs --standard=docs/LorisCS.xml $(git status -s | grep " M " | cut -d " " -f 3)'
-alias changed='git show $GIT_COMMIT --name-status | grep "\.php" | grep [^AM] | cut -f2'
-export PATH=/home/lorisadmin/rakudo/install/bin/:/home/lorisadmin/rakudo/install/share/perl6/site/bin:/home/lorisadmin/security/scary-strings/:$PATH
-work
-alias rebase='git fetch aces && git rebase -i aces/master'
